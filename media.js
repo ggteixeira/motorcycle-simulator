@@ -7,17 +7,27 @@ const prices2017 = [
 const prices2018 = [
   19900,
   18900,
+  18900,
   18800,
+  18800,
+  18800,
+  18800,
+  18500,
   18500,
   18490,
   18290,
   17990,
+  17900,
   17700,
+  17500,
+  17500,
   17500,
   17200,
   16900,
   16300,
   16000,
+  16000,
+  15900,
   15900,
   15880,
   15500
@@ -105,36 +115,29 @@ const prettifier = (priceMean, pricesArray) => {
     currency: 'BRL'
   }).format(priceMean)
 
-  return `- Quantidade: ${pricesArray.length} \n- Média: ${formattedPrice}\n`
+  return `- Unidades disponíveis: ${pricesArray.length} \n- Média: ${formattedPrice}\n`
 }
 
-// Preços CB 250F Twister (2016)
-// console.log('Honda CB 250F Twister 2016: ')
-// console.log(prettifier(meanCalculator(prices2016), prices2016))
+console.log('Honda CB 250F Twister 2016: ')
+console.log(prettifier(meanCalculator(prices2016), prices2016))
 
-// Preços CB 250F Twister (2017)
-// console.log('Honda CB 250F Twister 2017:')
-// console.log(prettifier(meanCalculator(prices2017), prices2017))
+console.log('Honda CB 250F Twister 2017:')
+console.log(prettifier(meanCalculator(prices2017), prices2017))
 
-// Preços CB 250F Twister (2018)
 console.log('Honda CB 250F Twister 2018:')
 console.log(prettifier(meanCalculator(prices2018), prices2018))
 
-// Preços CB 250F Twister (2019)
-// console.log('Honda CB 250F Twister 2019:')
-// console.log(prettifier(meanCalculator(prices2019), prices2019))
+console.log('Honda CB 250F Twister 2019:')
+console.log(prettifier(meanCalculator(prices2019), prices2019))
 
-// Preços CB 250F Twister (2020)
-// console.log('Honda CB 250F Twister 2020:')
-// console.log(prettifier(meanCalculator(prices2020), prices2020))
+console.log('Honda CB 250F Twister 2020:')
+console.log(prettifier(meanCalculator(prices2020), prices2020))
 
-// Preços CB 250F Twister (2021)
-// console.log('Honda CB 250F Twister 2021:')
-// console.log(prettifier(meanCalculator(prices2021), prices2021))
+console.log('Honda CB 250F Twister 2021:')
+console.log(prettifier(meanCalculator(prices2021), prices2021))
 
-// Preços CB 250F Twister (2022)
-// console.log('Honda CB 250F Twister 2022:')
-// console.log(prettifier(meanCalculator(prices2022), prices2022))
+console.log('Honda CB 250F Twister 2022:')
+console.log(prettifier(meanCalculator(prices2022), prices2022))
 
 console.log('-------------------------------\n')
 const entrada = 8000

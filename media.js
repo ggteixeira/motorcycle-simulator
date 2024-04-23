@@ -87,30 +87,7 @@ const prices2021 = [
   18480
 ]
 const prices2022 = [
-  23000,
-  23000,
-  22990,
-  22990,
-  22900,
-  22800,
-  22500,
-  22490,
-  22000,
-  21990,
-  22899,
-  21800,
-  21500,
-  21490,
-  21200,
-  21000,
-  20999,
-  20990,
-  20600,
-  20590,
-  20500,
-  20490,
-  19990,
-  19900
+  23000, 23000, 22990, 22990, 22900, 22800, 22500, 22490, 22000, 21990, 22899, 21800, 21500, 21490, 21200, 21000, 20999, 20990, 20600, 20590, 20500, 20490, 19990, 19900
 ]
 
 const meanCalculator = (array) => {
@@ -132,128 +109,58 @@ const prettifier = (priceMean, pricesArray) => {
 }
 
 // Preços CB 250F Twister (2016)
-console.log('Honda CB 250F Twister 2016: ')
-console.log(prettifier(meanCalculator(prices2016), prices2016))
+// console.log('Honda CB 250F Twister 2016: ')
+// console.log(prettifier(meanCalculator(prices2016), prices2016))
 
 // Preços CB 250F Twister (2017)
-console.log('Honda CB 250F Twister 2017:')
-console.log(prettifier(meanCalculator(prices2017), prices2017))
+// console.log('Honda CB 250F Twister 2017:')
+// console.log(prettifier(meanCalculator(prices2017), prices2017))
 
-//
-// // Preços CB 250F Twister (2018)
-// console.log('Honda CB 250F Twister 2018:')
-// console.log(meanCalculator(prices2018))
-//
-// // Preços CB 250F Twister (2019)
+// Preços CB 250F Twister (2018)
+console.log('Honda CB 250F Twister 2018:')
+console.log(prettifier(meanCalculator(prices2018), prices2018))
+
+// Preços CB 250F Twister (2019)
 // console.log('Honda CB 250F Twister 2019:')
-// console.log(meanCalculator([
-//   19800,
-//   19500,
-//   19000,
-//   19000,
-//   19000,
-//   18990,
-//   18700,
-//   18600,
-//   18490,
-//   18290,
-//   17999,
-//   17990,
-//   17590,
-//   17500]))
+// console.log(prettifier(meanCalculator(prices2019), prices2019))
 
 // Preços CB 250F Twister (2020)
 // console.log('Honda CB 250F Twister 2020:')
-// console.log(meanCalculator([
-//   19700,
-//   22980,
-//   20990,
-//   20990,
-//   20890,
-//   20500,
-//   20499,
-//   20000,
-//   19999,
-//   19990,
-//   19750,
-//   19500,
-//   19300,
-//   19200,
-//   19000,
-//   18999,
-//   18990,
-//   18500,
-//   18499,
-//   17990,
-//   17800,
-//   17300,
-//   16800]))
+// console.log(prettifier(meanCalculator(prices2020), prices2020))
 
 // Preços CB 250F Twister (2021)
 // console.log('Honda CB 250F Twister 2021:')
-// console.log(meanCalculator([
-//   23000,
-//   22900,
-//   22700,
-//   22000,
-//   21990,
-//   21900,
-//   21500,
-//   21000,
-//   20999,
-//   20990,
-//   20890,
-//   20500,
-//   20490,
-//   20290,
-//   20000,
-//   19990,
-//   19990,
-//   19900,
-//   19800,
-//   19690,
-//   18480]))
-//
+// console.log(prettifier(meanCalculator(prices2021), prices2021))
+
 // Preços CB 250F Twister (2022)
 // console.log('Honda CB 250F Twister 2022:')
-// console.log(meanCalculator([
-//   23000,
-//   23000,
-//   22990,
-//   22990,
-//   22900,
-//   22800,
-//   22500,
-//   22490,
-//   22000,
-//   21990,
-//   22899,
-//   21800,
-//   21500,
-//   21490,
-//   21200,
-//   21000,
-//   20999,
-//   20990,
-//   20600,
-//   20590,
-//   20500,
-//   20490,
-//   19990,
-//   19900]))
+// console.log(prettifier(meanCalculator(prices2022), prices2022))
 
-// console.log('-------------------------------')
-// console.log('Simulação de parcelamento:')
-//
-// const divisor = (price, entrada) => {
-//   const division = (price - entrada) / 12
-//
-//   const formattedDivision = new Intl.NumberFormat('pt-BR', {
-//     style: 'currency',
-//     currency: 'BRL'
-//   }).format(division)
-//
-//   return `(R$ ${price} - R$ ${entrada}) / 12 = ${formattedDivision}`
-// }
-//
-// console.log(divisor(17553, 8000))
+console.log('-------------------------------\n')
+const entrada = 8000
+
+const divisor = (price, entrada) => {
+  const parcelas = 12
+  const division = (price - entrada) / parcelas
+
+  const formattedPrice = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(price)
+
+  const formattedDivision = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(division)
+
+  return `(R$ ${formattedPrice} - R$ ${entrada}) / 12 = ${formattedDivision}\n`
+}
+
+console.log(`Simulador de parcelamento 2016: \n${divisor(meanCalculator(prices2016), entrada)}`)
+console.log(`Simulador de parcelamento 2017: \n${divisor(meanCalculator(prices2017), entrada)}`)
+console.log(`Simulador de parcelamento 2018: \n${divisor(meanCalculator(prices2018), entrada)}`)
+console.log(`Simulador de parcelamento 2019: \n${divisor(meanCalculator(prices2019), entrada)}`)
+console.log(`Simulador de parcelamento 2020: \n${divisor(meanCalculator(prices2020), entrada)}`)
+console.log(`Simulador de parcelamento 2021: \n${divisor(meanCalculator(prices2021), entrada)}`)
+console.log(`Simulador de parcelamento 2022: \n${divisor(meanCalculator(prices2022), entrada)}`)
+

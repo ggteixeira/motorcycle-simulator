@@ -1,3 +1,8 @@
+const hash = 'djgzh5X6IpXg2lew9a7oo'
+const year = 2018
+
+bring(`https://www.olx.com.br/_next/data/${hash}/pt-BR/autos-e-pecas/motos/honda/cb/250/${year}/estado-sp.json?f=c&me=40000&route=motos&route=honda&route=cb&route=250&route=2018&route=estado-sp`)
+
 const prices2016 = [
   16900, 16000, 15900, 15500, 15300
 ]

@@ -5,22 +5,18 @@ export const bring = async (url) => {
       'Accept': 'application/json',
     },
   })
-    .then((response) => {
-      return response.json()
-    })
-    .then(({ pageProps }) => {
-      console.log(pageProps.ads
-        .map(({ price }) => {
-          return price
-            .replace(/\$/g, '')
-            .replace(/\R/g, '')
-            .replace('.', '')
-            .trim()
-        })
-        .filter((price) => typeof price !== "undefined")
-        .map((price) => parseFloat(price))
-      )
-    })
+    .then((response) => response.json())
+    .then(({ pageProps }) => pageProps.ads.map(({ price }) => price))
+    .then((pricesArray) => pricesArray.filter((price) => typeof price !== "undefined"))
+    .then((definedPrices) => definedPrices.map((price) => price
+      .replace(/\$/g, '')
+      .replace(/\R/g, '')
+      .replace('.', '')
+      .trim()
+    ))
+    .then((cleanPrices) => cleanPrices.map((price) => parseFloat(price)))
+    .then((formattedPrices) => console.log(formattedPrices))
+
 }
 
-// bring(`https://www.olx.com.br/_next/data/${hash}/pt-BR/autos-e-pecas/motos/honda/cb/250/${year}/estado-sp.json?f=c&me=40000&route=motos&route=honda&route=cb&route=250&route=2018&route=estado-sp`)
+

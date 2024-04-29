@@ -1,18 +1,18 @@
 import { bring } from "./fetch.js"
 
 const hash = 'djgzh5X6IpXg2lew9a7oo'
-const year = 2016
+const year = 2019
 const url = `https://www.olx.com.br/_next/data/${hash}/pt-BR/autos-e-pecas/motos/honda/cb/250/${year}/estado-sp.json?f=c&me=40000&route=motos&route=honda&route=cb&route=250&route=2018&route=estado-sp`
 
 console.log('bring()')
 console.log(bring(url))
 
-const prices2016 = [
-  16900, 16000, 15900, 15500, 15300
-]
-
-console.log('prices2016:')
-console.log(prices2016)
+// const prices2016 = [
+//   16900, 16000, 15900, 15500, 15300
+// ]
+//
+// console.log('prices2016:')
+// console.log(prices2016)
 
 // const prices2017 = [
 //   18000, 17900, 17899, 17500, 17000, 16900

@@ -47,6 +47,7 @@ console.log('Honda CB 250F Twister 2022:')
 console.log(prettifier(meanCalculator(ARRAY2022), ARRAY2022))
 
 console.log('-------------------------------\n')
+
 const entrada = 8000
 
 const divisor = (price, entrada) => {
@@ -65,7 +66,6 @@ const divisor = (price, entrada) => {
 
   return `(R$ ${formattedPrice} - R$ ${entrada}) / 12 = ${formattedDivision}\n`
 }
-
 
 console.log(`Simulador de parcelamento 2016: \n${divisor(meanCalculator(ARRAY2016), entrada)}`)
 console.log(`Simulador de parcelamento 2017: \n${divisor(meanCalculator(ARRAY2017), entrada)}`)

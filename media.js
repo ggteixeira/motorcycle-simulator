@@ -3,19 +3,15 @@ import { bring } from "./fetch.js"
 const HASH = 'djgzh5X6IpXg2lew9a7oo'
 const YEAR = 2018
 const URL = `https://www.olx.com.br/_next/data/${HASH}/pt-BR/autos-e-pecas/motos/honda/cb/250/${YEAR}/estado-sp.json?f=c&me=40000&route=motos&route=honda&route=cb&route=250&route=2018&route=estado-sp`
+const ARRAY = await bring(URL)
 
 const meanCalculator = (array) => {
-  const summation = array?.reduce((previous, current) => {
+  const summation = array.reduce((previous, current) => {
     return current + previous
   }, 0)
 
-  console.log('summation:')
-  console.log(summation)
-  // return summation / array?.length
+  return summation / array.length
 }
-
-console.log('meanCalculator:')
-console.log(meanCalculator(await bring(URL)))
 
 const prettifier = (priceMean, pricesArray) => {
   const formattedPrice = new Intl.NumberFormat('pt-BR', {
@@ -26,11 +22,11 @@ const prettifier = (priceMean, pricesArray) => {
   return `- Unidades disponíveis: ${pricesArray.length} \n- Média: ${formattedPrice}\n`
 }
 
-// console.log('Honda CB 250F Twister 2016: ')
-// console.log(prettifier(meanCalculator(await bring(URL)), await bring(URL)))
+console.log('Honda CB 250F Twister 2016: ')
+console.log(prettifier(meanCalculator(ARRAY), ARRAY))
 
 // console.log('Honda CB 250F Twister 2017:')
-// console.log(prettifier(meanCalculator(prices2017), prices2017))
+// console.log(prettifier(meanCalculator(), prices2017))
 //
 // console.log('Honda CB 250F Twister 2018:')
 // console.log(prettifier(meanCalculator(prices2018), prices2018))

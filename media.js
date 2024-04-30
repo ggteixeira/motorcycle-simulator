@@ -1,127 +1,21 @@
 import { bring } from "./fetch.js"
 
-const hash = 'djgzh5X6IpXg2lew9a7oo'
-const year = 2019
-const url = `https://www.olx.com.br/_next/data/${hash}/pt-BR/autos-e-pecas/motos/honda/cb/250/${year}/estado-sp.json?f=c&me=40000&route=motos&route=honda&route=cb&route=250&route=2018&route=estado-sp`
+const HASH = 'djgzh5X6IpXg2lew9a7oo'
+const YEAR = 2018
+const URL = `https://www.olx.com.br/_next/data/${HASH}/pt-BR/autos-e-pecas/motos/honda/cb/250/${YEAR}/estado-sp.json?f=c&me=40000&route=motos&route=honda&route=cb&route=250&route=2018&route=estado-sp`
 
-console.log('bring()')
-console.log(bring(url))
+const meanCalculator = (array) => {
+  const summation = array?.reduce((previous, current) => {
+    return current + previous
+  }, 0)
 
-// const prices2016 = [
-//   16900, 16000, 15900, 15500, 15300
-// ]
-//
-// console.log('prices2016:')
-// console.log(prices2016)
-
-// const prices2017 = [
-//   18000, 17900, 17899, 17500, 17000, 16900
-// ]
-// const prices2018 = [
-//   19900,
-//   18900,
-//   18900,
-//   18800,
-//   18800,
-//   18800,
-//   18800,
-//   18500,
-//   18500,
-//   18490,
-//   18290,
-//   17990,
-//   17900,
-//   17700,
-//   17500,
-//   17500,
-//   17500,
-//   17200,
-//   16900,
-//   16300,
-//   16000,
-//   16000,
-//   15900,
-//   15900,
-//   15880,
-//   15500
-// ]
-// const prices2019 = [
-//   19800,
-//   19500,
-//   19000,
-//   19000,
-//   19000,
-//   18990,
-//   18700,
-//   18600,
-//   18490,
-//   18290,
-//   17999,
-//   17990,
-//   17590,
-//   17500
-// ]
-// const prices2020 = [
-//   19700,
-//   22980,
-//   20990,
-//   20990,
-//   20890,
-//   20500,
-//   20499,
-//   20000,
-//   19999,
-//   19990,
-//   19750,
-//   19500,
-//   19300,
-//   19200,
-//   19000,
-//   18999,
-//   18990,
-//   18500,
-//   18499,
-//   17990,
-//   17800,
-//   17300,
-//   16800
-// ]
-// const prices2021 = [
-//   23000,
-//   22900,
-//   22700,
-//   22000,
-//   21990,
-//   21900,
-//   21500,
-//   21000,
-//   20999,
-//   20990,
-//   20890,
-//   20500,
-//   20490,
-//   20290,
-//   20000,
-//   19990,
-//   19990,
-//   19900,
-//   19800,
-//   19690,
-//   18480
-// ]
-// const prices2022 = [
-//   23000, 23000, 22990, 22990, 22900, 22800, 22500, 22490, 22000, 21990, 22899, 21800, 21500, 21490, 21200, 21000, 20999, 20990, 20600, 20590, 20500, 20490, 19990, 19900
-// ]
-
-const meanCalculator = async (array) => {
-  console.log(array)
-
-  // const summation = await array.reduce((previous, current) => {
-  //   return current + previous
-  // }, 0)
-  //
-  // return summation / array.length
+  console.log('summation:')
+  console.log(summation)
+  // return summation / array?.length
 }
+
+console.log('meanCalculator:')
+console.log(meanCalculator(await bring(URL)))
 
 const prettifier = (priceMean, pricesArray) => {
   const formattedPrice = new Intl.NumberFormat('pt-BR', {
@@ -133,7 +27,7 @@ const prettifier = (priceMean, pricesArray) => {
 }
 
 // console.log('Honda CB 250F Twister 2016: ')
-// console.log(prettifier(meanCalculator(bring(url)), bring(url)))
+// console.log(prettifier(meanCalculator(await bring(URL)), await bring(URL)))
 
 // console.log('Honda CB 250F Twister 2017:')
 // console.log(prettifier(meanCalculator(prices2017), prices2017))
@@ -173,7 +67,7 @@ const divisor = (price, entrada) => {
   return `(R$ ${formattedPrice} - R$ ${entrada}) / 12 = ${formattedDivision}\n`
 }
 
-// console.log(`Simulador de parcelamento 2016: \n${divisor(meanCalculator(bring(url)), entrada)}`)
+// console.log(`Simulador de parcelamento 2016: \n${divisor(meanCalculator(bring(URL)), entrada)}`)
 
 // console.log(`Simulador de parcelamento 2016: \n${divisor(meanCalculator(prices2016), entrada)}`)
 // console.log(`Simulador de parcelamento 2017: \n${divisor(meanCalculator(prices2017), entrada)}`)

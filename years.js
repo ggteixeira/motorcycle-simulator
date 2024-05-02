@@ -1,4 +1,14 @@
-const years = {
+export const twisterYears = {
+  2016: "66", // Primeira CB Twister 250F
+  2017: "67",
+  2018: "68",
+  2019: "69",
+  2020: "70",
+  2021: "71",
+  2022: "72", // Última CB Twister 250F
+}
+
+export const years = {
   1950: "0",
   1951: "1",
   1952: "2",

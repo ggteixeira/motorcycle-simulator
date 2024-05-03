@@ -1,5 +1,5 @@
 export async function bring(year) {
-  const HASH = 'djgzh5X6IpXg2lew9a7oo'
+  const HASH = 'UL0sCmtaY4kjm815zt450'
   const URL = `https://www.olx.com.br/_next/data/${HASH}/pt-BR/autos-e-pecas/motos/honda/cb/250/${year}/estado-sp.json?f=c&me=40000&mf=1&route=motos&route=honda&route=cb&route=250&route=${year}&route=estado-sp`
 
   const response = fetch(URL, {

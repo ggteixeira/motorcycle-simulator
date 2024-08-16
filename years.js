@@ -6,7 +6,7 @@ export const twisterYears = {
   2020: "70",
   2021: "71",
   2022: "72", // Última CB Twister 250F
-}
+};
 
 export const years = {
   1950: "0",
@@ -84,4 +84,4 @@ export const years = {
   2022: "72", // Última CB Twister 250F
   2023: "73",
   2024: "74",
-}
+};
